@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-export default class SectionForm extends React.Component {
+export default class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +30,14 @@ export default class SectionForm extends React.Component {
           onChange={this.handleChange}
           placeholder='title'
         />
-        <button type='submit'> Create Section </button>
+        <input
+          type='number'
+          name='budget'
+          value={this.state.budget}
+          onChange={this.handleChange}
+          placeholder='0'
+        />
+        <button type='submit'> New Category </button>
       </form>
     );
   }

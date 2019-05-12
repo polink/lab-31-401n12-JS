@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createSection } from './action/section-actions';
+import { createCategory } from './action/category-actions';
 
-import SectionForm from './component/SectionForm/SectionForm';
+import CategoryForm from './component/CategoryForm/CategoryForm';
 
 class App extends React.Component {
   render() {
     return(
       <div>
-        <SectionForm onComplete={this.props.mappedSectionCreate}/>
-        { this.props.sections.map(current => <p>{current.title}</p>)}
+        <CategoryForm onComplete={this.props.mappedCategoryCreate}/>
+        {this.props.category.map(current => <p>{current.title} {current.budget}</p>)}
       </div>
     )
   }
@@ -19,15 +19,15 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   // Vinicio - anything I return here WILL become props
   return {
-    sections: state,
+    category: state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   // Vinicio - anything I return here WILL become props
   return {
-    mappedSectionCreate: (section) => {
-      dispatch(createSection(section.title));
+    mappedCategoryCreate: (category) => {
+      dispatch(createCategory(category.title));
     }
   }
 };

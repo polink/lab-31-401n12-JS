@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
-import sectionReducer from './reducer/section-reducer';
+import categoryReducer from './reducer/category-reducer';
 
 export default () => {
-  return createStore(sectionReducer);
+  return createStore(categoryReducer);
 };
