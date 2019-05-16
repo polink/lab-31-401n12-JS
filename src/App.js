@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch) => {
   // Vinicio - anything I return here WILL become props
   return {
     mappedCategoryCreate: (category) => {
-      dispatch(createCategory(category.title));
+      dispatch(createCategory(category.title, category.budget));
     }
   }
 };
